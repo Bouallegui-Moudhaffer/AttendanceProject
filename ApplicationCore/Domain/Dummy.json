@@ -1,0 +1,45 @@
+{
+  "AttendanceRecords": [
+    {
+      "StudentsData": [
+        {
+          "Id": 1,
+          "firstName": "John",
+          "lastName": "Doe",
+          "birthDate": "2001-04-15T00:00:00Z",
+          "AttendanceStatus": 1,
+          "Formation": 1
+        },
+        {
+          "Id": 2,
+          "firstName": "Jane",
+          "lastName": "Smith",
+          "birthDate": "2000-08-23T00:00:00Z",
+          "AttendanceStatus": 1,
+          "Formation": 0
+        },
+        {
+          "Id": 3,
+          "firstName": "Jim",
+          "lastName": "Bean",
+          "birthDate": "1999-11-02T00:00:00Z",
+          "AttendanceStatus": 2,
+          "Formation": 0
+        },
+        {
+          "Id": 4,
+          "firstName": "Brad",
+          "lastName": "Pitt",
+          "birthDate": "1998-11-02T00:00:00Z",
+          "AttendanceStatus": 3,
+          "Formation": 0
+        }
+      ],
+      "recordDate": "2023-11-04T17:35:15.5094347+01:00"
+    }
+  ],
+  "Auth": {
+    "username": "admin",
+    "pwd": "admin"
+  }
+}
