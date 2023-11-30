@@ -16,7 +16,12 @@ namespace Examen.ApplicationCore.Services
         {
             _attendanceRecordsRoot = LoadJsonData();
 
-            // Assuming you want to work with the latest attendance record:
+            if (!_attendanceRecordsRoot.AttendanceLog.Any() ||
+                _attendanceRecordsRoot.AttendanceLog.Last().recordDate?.Date != DateTime.Now.Date)
+            {
+                CreateNewAttendanceRecord();
+            }
+
             _students = _attendanceRecordsRoot?.AttendanceLog.LastOrDefault()?.StudentsData ?? Enumerable.Empty<Student>();
         }
 
@@ -26,7 +31,27 @@ namespace Examen.ApplicationCore.Services
             return JsonSerializer.Deserialize<AttendanceRecord>(jsonString) ?? new AttendanceRecord();
         }
 
-        public void Update()
+        public void CreateNewAttendanceRecord()
+        {
+            var lastRecord = _attendanceRecordsRoot.AttendanceLog.LastOrDefault();
+            var newRecord = new Attendance
+            {
+                recordDate = DateTime.Now,
+                StudentsData = lastRecord?.StudentsData.Select(s => new Student
+                {
+                    Id = s.Id,
+                    firstName = s.firstName,
+                    lastName = s.lastName,
+                    birthDate = s.birthDate,
+                    AttendanceStatus = null, // Reset AttendanceStatus
+                    Formation = s.Formation
+                }).ToList() ?? new List<Student>()
+            };
+            _attendanceRecordsRoot.AttendanceLog.Add(newRecord);
+            Update();
+        }
+
+            public void Update()
         {
             var options = new JsonSerializerOptions { WriteIndented = true };
             // Serialize the whole AttendanceRecord object instead of just _students

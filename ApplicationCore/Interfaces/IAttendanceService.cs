@@ -15,6 +15,6 @@ namespace Examen.ApplicationCore.Interfaces
         public Dictionary<Student, AttendanceStatus?> GetAll();
         public void UpdateAttendanceStatus(int studentId, AttendanceStatus newStatus);
         public IEnumerable<Student> StudentToSign();
-
+        public void CreateNewAttendanceRecord();
     }
 }

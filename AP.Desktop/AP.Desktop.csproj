@@ -1,0 +1,59 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Fonts\Font Awesome 6 Free Solid.otf" />
+    <None Remove="Icons\bell.png" />
+    <None Remove="Icons\clock.png" />
+    <None Remove="Icons\down.png" />
+    <None Remove="Icons\envelope.png" />
+    <None Remove="Icons\exit.png" />
+    <None Remove="Icons\group.png" />
+    <None Remove="Icons\home.png" />
+    <None Remove="Icons\maximize.png" />
+    <None Remove="Icons\minimize.png" />
+    <None Remove="Images\back-image.jpg" />
+    <None Remove="Images\dashboard.png" />
+    <None Remove="Images\key-icon.png" />
+    <None Remove="Images\logo.png" />
+    <None Remove="Images\personal_photo.png" />
+    <None Remove="Images\user-icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FontAwesome.Sharp" Version="6.1.1" />
+    <PackageReference Include="Microsoft.NET.Build.Containers" Version="7.0.404" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ApplicationCore\ApplicationCore.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Fonts\Font Awesome 6 Free Solid.otf" />
+    <Resource Include="Icons\bell.png" />
+    <Resource Include="Icons\clock.png" />
+    <Resource Include="Icons\down.png" />
+    <Resource Include="Icons\envelope.png" />
+    <Resource Include="Icons\exit.png" />
+    <Resource Include="Icons\group.png" />
+    <Resource Include="Icons\home.png" />
+    <Resource Include="Icons\maximize.png" />
+    <Resource Include="Icons\minimize.png" />
+    <Resource Include="Images\back-image.jpg" />
+    <Resource Include="Images\dashboard.png" />
+    <Resource Include="Images\key-icon.png" />
+    <Resource Include="Images\logo.png" />
+    <Resource Include="Images\personal_photo.png" />
+    <Resource Include="Images\user-icon.png" />
+  </ItemGroup>
+
+</Project>
